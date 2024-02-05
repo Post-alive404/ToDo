@@ -1,0 +1,129 @@
+2024-01-31 17:01:54,388 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[D:\Projects_all\projects_spring\learn_spring_dir\config_dir\apache-activemq-5.18.3\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:54,397 | INFO  | Starting Persistence Adapter: KahaDBPersistenceAdapter[D:\Projects_all\projects_spring\learn_spring_dir\config_dir\apache-activemq-5.18.3\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:54,426 | INFO  | Starting KahaDBStore | org.apache.activemq.store.kahadb.KahaDBStore | main
+2024-01-31 17:01:54,426 | INFO  | Opening MessageDatabase | org.apache.activemq.store.kahadb.MessageDatabase | main
+2024-01-31 17:01:54,915 | INFO  | Starting Temp Data Store | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:54,916 | INFO  | PListStore:[D:\Projects_all\projects_spring\learn_spring_dir\config_dir\apache-activemq-5.18.3\bin\..\data\localhost\tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2024-01-31 17:01:54,916 | INFO  | Starting Job Scheduler Store | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:54,917 | INFO  | Persistence Adapter successfully started | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:55,083 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-60714-1706713314930-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:55,119 | INFO  | Listening for connections at: tcp://DESKTOP-0R0SG1J:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2024-01-31 17:01:55,123 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:01:55,133 | INFO  | Listening for connections at: amqp://DESKTOP-0R0SG1J:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2024-01-31 17:01:55,134 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:01:55,145 | INFO  | Listening for connections at: stomp://DESKTOP-0R0SG1J:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2024-01-31 17:01:55,149 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:01:55,164 | ERROR | Failed to start Apache ActiveMQ (localhost, ID:DESKTOP-0R0SG1J-60714-1706713314930-0:1) | org.apache.activemq.broker.BrokerService | main
+java.io.IOException: Transport Connector could not be registered in JMX: java.io.IOException: Failed to bind to server socket: mqtt://0.0.0.0:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: bind
+	at org.apache.activemq.util.IOExceptionSupport.create(IOExceptionSupport.java:30)
+	at org.apache.activemq.broker.BrokerService.registerConnectorMBean(BrokerService.java:2247)
+	at org.apache.activemq.broker.BrokerService.startTransportConnector(BrokerService.java:2729)
+	at org.apache.activemq.broker.BrokerService.startAllConnectors(BrokerService.java:2625)
+	at org.apache.activemq.broker.BrokerService.doStartBroker(BrokerService.java:762)
+	at org.apache.activemq.broker.BrokerService.startBroker(BrokerService.java:724)
+	at org.apache.activemq.broker.BrokerService.start(BrokerService.java:622)
+	at org.apache.activemq.xbean.XBeanBrokerService.afterPropertiesSet(XBeanBrokerService.java:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1930)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1872)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:64)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:52)
+	at org.apache.activemq.xbean.XBeanBrokerFactory$1.<init>(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createApplicationContext(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createBroker(XBeanBrokerFactory.java:67)
+	at org.apache.activemq.broker.BrokerFactory.createBroker(BrokerFactory.java:71)
+	at org.apache.activemq.broker.BrokerFactory.createBroker(BrokerFactory.java:54)
+	at org.apache.activemq.console.command.StartCommand.runTask(StartCommand.java:87)
+	at org.apache.activemq.console.command.AbstractCommand.execute(AbstractCommand.java:63)
+	at org.apache.activemq.console.command.ShellCommand.runTask(ShellCommand.java:154)
+	at org.apache.activemq.console.command.AbstractCommand.execute(AbstractCommand.java:63)
+	at org.apache.activemq.console.command.ShellCommand.main(ShellCommand.java:104)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.apache.activemq.console.Main.runTaskClass(Main.java:262)
+	at org.apache.activemq.console.Main.main(Main.java:115)
+Caused by: java.io.IOException: Failed to bind to server socket: mqtt://0.0.0.0:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: bind
+	at org.apache.activemq.util.IOExceptionSupport.create(IOExceptionSupport.java:36)
+	at org.apache.activemq.transport.tcp.TcpTransportServer.bind(TcpTransportServer.java:148)
+	at org.apache.activemq.transport.tcp.TcpTransportFactory.doBind(TcpTransportFactory.java:62)
+	at org.apache.activemq.transport.TransportFactorySupport.bind(TransportFactorySupport.java:40)
+	at org.apache.activemq.broker.TransportConnector.createTransportServer(TransportConnector.java:349)
+	at org.apache.activemq.broker.TransportConnector.getServer(TransportConnector.java:148)
+	at org.apache.activemq.broker.TransportConnector.asManagedConnector(TransportConnector.java:113)
+	at org.apache.activemq.broker.BrokerService.registerConnectorMBean(BrokerService.java:2242)
+	... 36 more
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:556)
+	at java.base/sun.nio.ch.Net.bind(Net.java:545)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:629)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:393)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:275)
+	at java.base/javax.net.DefaultServerSocketFactory.createServerSocket(ServerSocketFactory.java:231)
+	at org.apache.activemq.transport.tcp.TcpTransportServer.bind(TcpTransportServer.java:145)
+	... 42 more
+2024-01-31 17:01:55,191 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-60714-1706713314930-0:1) is shutting down | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:55,193 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:01:55,194 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:01:55,195 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:01:55,195 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:01:55,197 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:01:55,203 | INFO  | PListStore:[D:\Projects_all\projects_spring\learn_spring_dir\config_dir\apache-activemq-5.18.3\bin\..\data\localhost\tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2024-01-31 17:01:55,204 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | main
+2024-01-31 17:01:55,208 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | main
+2024-01-31 17:01:55,213 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | main
+2024-01-31 17:01:55,261 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-60714-1706713314930-0:1) uptime 0.922 seconds | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:55,271 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-60714-1706713314930-0:1) is shutdown | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:01:55,325 | WARN  | Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.activemq.xbean.XBeanBrokerService#0' defined in class path resource [activemq.xml]: Invocation of init method failed; nested exception is java.io.IOException: Transport Connector could not be registered in JMX: java.io.IOException: Failed to bind to server socket: mqtt://0.0.0.0:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: bind | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2024-01-31 17:09:50,143 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[D:\Projects_all\projects_spring\learn_spring_dir\config_dir\apache-activemq-5.18.3\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:09:50,149 | INFO  | Starting Persistence Adapter: KahaDBPersistenceAdapter[D:\Projects_all\projects_spring\learn_spring_dir\config_dir\apache-activemq-5.18.3\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:09:50,179 | INFO  | Starting KahaDBStore | org.apache.activemq.store.kahadb.KahaDBStore | main
+2024-01-31 17:09:50,179 | INFO  | Opening MessageDatabase | org.apache.activemq.store.kahadb.MessageDatabase | main
+2024-01-31 17:09:50,276 | INFO  | KahaDB is version 7 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2024-01-31 17:09:50,472 | INFO  | Starting Temp Data Store | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:09:50,473 | INFO  | PListStore:[D:\Projects_all\projects_spring\learn_spring_dir\config_dir\apache-activemq-5.18.3\bin\..\data\localhost\tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2024-01-31 17:09:50,473 | INFO  | Starting Job Scheduler Store | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:09:50,475 | INFO  | Persistence Adapter successfully started | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:09:50,622 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-61442-1706713790486-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:09:50,646 | INFO  | Listening for connections at: tcp://DESKTOP-0R0SG1J:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2024-01-31 17:09:50,647 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:09:50,652 | INFO  | Listening for connections at: amqp://DESKTOP-0R0SG1J:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2024-01-31 17:09:50,653 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:09:50,658 | INFO  | Listening for connections at: stomp://DESKTOP-0R0SG1J:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2024-01-31 17:09:50,659 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:09:50,662 | INFO  | Listening for connections at: mqtt://DESKTOP-0R0SG1J:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2024-01-31 17:09:50,663 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:09:50,668 | INFO  | Starting Jetty server | org.apache.activemq.transport.WebTransportServerSupport | main
+2024-01-31 17:09:50,713 | INFO  | Creating Jetty connector | org.apache.activemq.transport.WebTransportServerSupport | main
+2024-01-31 17:09:50,772 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@54d8c20d{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2024-01-31 17:09:50,878 | INFO  | Listening for connections at ws://DESKTOP-0R0SG1J:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2024-01-31 17:09:50,878 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2024-01-31 17:09:50,879 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-61442-1706713790486-0:1) started | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:09:50,880 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2024-01-31 17:09:51,594 | INFO  | ActiveMQ WebConsole available at http://127.0.0.1:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2024-01-31 17:09:51,595 | INFO  | ActiveMQ Jolokia REST API available at http://127.0.0.1:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2024-01-31 18:27:12,597 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-61442-1706713790486-0:1) is shutting down | org.apache.activemq.broker.BrokerService | Thread-20
+2024-01-31 18:27:12,702 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2024-01-31 18:27:12,706 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2024-01-31 18:27:12,708 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2024-01-31 18:27:12,709 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2024-01-31 18:27:12,711 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: stomp://0.0.0.0:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-01-31 18:27:12,722 | INFO  | Could not accept connection during shutdown  : null (null) | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: stomp://0.0.0.0:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2024-01-31 18:27:12,931 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2024-01-31 18:27:13,004 | INFO  | PListStore:[D:\Projects_all\projects_spring\learn_spring_dir\config_dir\apache-activemq-5.18.3\bin\..\data\localhost\tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | Thread-20
+2024-01-31 18:27:13,007 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | Thread-20
+2024-01-31 18:27:13,008 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | Thread-20
+2024-01-31 18:27:13,009 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | Thread-20
+2024-01-31 18:27:13,136 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-61442-1706713790486-0:1) uptime 1 hour 17 minutes | org.apache.activemq.broker.BrokerService | Thread-20
+2024-01-31 18:27:13,137 | INFO  | Apache ActiveMQ 5.18.3 (localhost, ID:DESKTOP-0R0SG1J-61442-1706713790486-0:1) is shutdown | org.apache.activemq.broker.BrokerService | Thread-20
